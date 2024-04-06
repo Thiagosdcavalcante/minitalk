@@ -6,11 +6,11 @@
 /*   By: tsantana <tsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 19:58:01 by tsantana          #+#    #+#             */
-/*   Updated: 2024/04/03 15:42:43 by tsantana         ###   ########.fr       */
+/*   Updated: 2024/04/05 18:56:21 by tsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minitalk.h"
+#include "minitalk.h"
 
 int main(void)
 {
