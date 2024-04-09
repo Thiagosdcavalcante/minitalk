@@ -1,6 +1,0 @@
--I
-includes
--I
-libs/libft
--I
-libs/ft_printf
