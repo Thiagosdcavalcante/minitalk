@@ -6,7 +6,7 @@
 /*   By: tsantana <tsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 16:54:36 by tsantana          #+#    #+#             */
-/*   Updated: 2024/04/09 17:47:02 by tsantana         ###   ########.fr       */
+/*   Updated: 2024/04/09 20:26:34 by tsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "../libs/libft/libft.h"
 # include <signal.h>
+# include <unistd.h>
 
 typedef struct s_handler_bit
 {

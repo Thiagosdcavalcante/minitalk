@@ -6,7 +6,7 @@
 /*   By: tsantana <tsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 19:57:42 by tsantana          #+#    #+#             */
-/*   Updated: 2024/04/09 17:46:56 by tsantana         ###   ########.fr       */
+/*   Updated: 2024/04/09 21:07:53 by tsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,25 +25,18 @@ static void	sig_handler(int signal_number)
 			g_result.char_index++;
 			g_result.bit_counter = 0;
 		}
-		g_result.str[g_result.char_index] |= (signal_number == SIGUSR2) << g_result.bit_counter;
+		g_result.str[g_result.char_index] |= (signal_number == SIGUSR2
+			|| signal_number == SIGUSR1) << g_result.bit_counter;
 		g_result.bit_counter++;
 	}
 }
-//
-// static void sigaction_start(struct sigaction *sa)
-// {
-// 	ft_memset(&sa, 0, sizeof(sigaction));
-// 	sa->sa_handler = sig_handler;
-// 	sigemptyset(&sa->sa_mask);
-// 	sa->sa_flags = 0;
-// }
 
 int main(void)
 {
 	struct sigaction sa;
 	
 	g_result = (t_handler_bit){0};
-	ft_memset(&sa, 0, sizeof(sigaction));
+	ft_memset(&sa, 0, sizeof(struct sigaction));
 	sa.sa_handler = sig_handler;
 	sigemptyset(&sa.sa_mask);
 	sa.sa_flags = 0;
