@@ -6,7 +6,7 @@
 /*   By: tsantana <tsantana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 19:57:42 by tsantana          #+#    #+#             */
-/*   Updated: 2024/04/13 17:58:20 by tsantana         ###   ########.fr       */
+/*   Updated: 2024/04/13 18:31:44 by tsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ static void	sig_handler(int signal_number, siginfo_t *infor, void *ucontext)
 	}
 	if (bit_counter == 8)
 	{
-		kill(infor->si_pid, SIGUSR1);
 		write(1, &byte_print, 1);
 		bit_counter = 0;
 		byte_print = 0;
 	}
+	kill(infor->si_pid, SIGUSR1);
 }
 
 int main(void)
